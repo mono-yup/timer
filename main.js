@@ -6,24 +6,30 @@ let minutes = 0;
 let seconds = 0;
 
 
-let stop = true
+let stop = true;
 
-while (stop == false) {
-    setTimeout( () => {
-    upByOne()
-    }, 1000)
-}
+
+// event listeners
+startBtn.addEventListener("click", () => { 
+    let counter  = setInterval( upByOne, 1000)
+    stop = false;
+    console.log("start")
+})
+stopBtn.addEventListener("click", () => { 
+    clearInterval(counter)
+    console.log("stop")});
 
 function upByOne () {
     seconds+= 1;
     if (seconds === 60) {
         seconds = 0;
-        clock.innerHTML = `${minutes+1} : ${seconds}`
+        minutes+= 1
+        clock.innerHTML = `${minutes}:${seconds}`
     }
     else if (seconds >= 10 ) {
-        clock.innerHTML = `${minutes} : ${seconds}`
+        clock.innerHTML = `${minutes}:${seconds}`
     }
     else {
-        clock.innerHTML = `${minutes} : 0${seconds}`
+        clock.innerHTML = `${minutes}:0${seconds}`
     }
 }
