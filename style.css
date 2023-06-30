@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 21% 50% 29%;
+}
+
+.controlBtn {
+    font-size: 100px
+}
+
+
+
+#number {
+    width: auto;
+    height: 40vh;
+    background-color: rgb(255, 255, 255) ;
+    color: rgb(0, 0, 0);
+    font-size: 500px;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    font-family: 'Rock 3D', cursive;
+    grid-column-start: 2;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+}
+
+#startResume {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    justify-self: center;
+    color: green;
+}
+
+#stop {
+    grid-column: 3/4;
+    grid-row: 3/4;
+    justify-self: center;
+    color: red;
+}
