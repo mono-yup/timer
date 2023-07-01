@@ -1,7 +1,7 @@
 let stopBtn = document.getElementById("stop");
 let startBtn = document.getElementById("startResume")
 let clock = document.getElementById("number");
-
+let startText = document.getElementById("startBtn");
 let minutes = 0;
 let seconds = 0;
 
@@ -20,14 +20,14 @@ startBtn.addEventListener("click", () => {
         braker = 1;
         counter = setInterval( upByOne, 1000);
     stop = false;
-    started = true
+    started = true;
     console.log("start");
     }
 })
 stopBtn.addEventListener("click", () => { 
     if (started === true) {
-         startBtn.innerText = "resume";
-         startBtn.classList.add = "resume";
+        startText.innerText = "resume";
+        startText.style.color = "orange";
     }
     clearInterval(counter)
     braker = 0;
