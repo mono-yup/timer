@@ -8,15 +8,29 @@ let seconds = 0;
 
 let stop = true;
 
+let counter;
+let started = false;
 
-// event listeners
+let braker = 0;
+
+// event listener
 startBtn.addEventListener("click", () => { 
-    let counter  = setInterval( upByOne, 1000)
+    if (braker === 0) {
+        upByOne();
+        braker = 1;
+        counter = setInterval( upByOne, 1000);
     stop = false;
-    console.log("start")
+    started = true
+    console.log("start");
+    }
 })
 stopBtn.addEventListener("click", () => { 
+    if (started === true) {
+         startBtn.innerText = "resume";
+         startBtn.classList.add = "resume";
+    }
     clearInterval(counter)
+    braker = 0;
     console.log("stop")});
 
 function upByOne () {
@@ -24,12 +38,12 @@ function upByOne () {
     if (seconds === 60) {
         seconds = 0;
         minutes+= 1
-        clock.innerHTML = `${minutes}:${seconds}`
+        clock.innerHTML = `${minutes}:0${seconds}`;
     }
     else if (seconds >= 10 ) {
-        clock.innerHTML = `${minutes}:${seconds}`
+        clock.innerHTML = `${minutes}:${seconds}`;
     }
     else {
-        clock.innerHTML = `${minutes}:0${seconds}`
+        clock.innerHTML = `${minutes}:0${seconds}`;
     }
 }

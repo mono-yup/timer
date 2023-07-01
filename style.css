@@ -13,7 +13,11 @@ body {
 }
 
 .controlBtn {
-    font-size: 100px
+    font-size: 100px;
+}
+
+.resume {
+    color: #C57D29;
 }
 
 
